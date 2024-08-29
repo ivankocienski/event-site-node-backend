@@ -220,6 +220,19 @@ async function main() {
   events = await loadEvents();
   console.log(`loaded ${events.length} events`);
 
+  const about = [
+    "",
+    "The following paths are defined:",
+    "  GET /               -> read system status",
+    "  GET /partners       -> Reads all partner data",
+    "  GET /partners/:id   -> Read one partner",
+    "  GET /events         -> Read events",
+    "  GET /events/:id     -> Read on event",
+    ""
+  ];
+
+  about.map( line => console.log(line));
+
   app.listen(8001, () => {
     console.log("running @ http://localhost:8001/");
   });
